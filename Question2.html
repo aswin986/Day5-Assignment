@@ -1,0 +1,75 @@
+<!-- Create a Class User with properties as name, age & email.
+He can login and logout
+Create another class Moderator which has all the features of User, plus additional functionality to Add
+coins and remove coins.
+Create one more class Admin which has all the features of Moderator plus additional features like add a
+Course and delete a particular course for a user -->
+
+
+
+<html>
+    <head>
+        <script>
+            class User{
+                constructor(name,age,email){
+                    this.name=name;
+                    this.age=age;
+                    this.email=email;
+                    this.courses=[];
+                    
+                }
+                login(){
+                    console.log(`${this.name} has logged in`);
+                    return this;
+                           
+                
+                
+                }
+                logout(){
+                    console.log(`${this.name} has logged out`);
+                    return this;
+                }
+            }
+            class Moderator extends User{
+                addcoins(user){
+                    users = users.filter(u=>{
+                        return u.email !=user.email;
+                        console.log(`${this.name} has added coins`)
+                    })
+                }
+            }
+            class Admin extends Moderator{
+                addcourse(user,course){
+                    user.courses.push(course);
+                    console.log(user);
+
+                }
+                deleteuser(user){
+                    users= users.filter(u=>{
+                        return u.email != user.email
+                    })
+                }
+
+            }
+
+            let user1 = new User('aswin',13,'asefede');
+            let user2 = new User('ram',19,'zasfdh');
+           
+            let mod = new Moderator('surya',23,'awedff');
+             let group=[user1,user2,mod];
+            let admin = new Admin("pooja",23,'asddweret');
+            let users=[user1,user2,mod,admin];
+            users.forEach(element =>{
+                console.log(element);
+            });
+            
+            user1.login();
+            mod.addcoins(user1);
+            admin.addcourse(user1,"Javascript");
+            
+            admin.deleteuser(user2);
+            console.log(users)
+            
+        </script>
+    </head>
+</html>

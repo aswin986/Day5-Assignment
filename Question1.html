@@ -1,0 +1,36 @@
+<!-- Question 1:
+Write a program which does the following things:
+1. Takes a positive number from the user.
+2. Makes an array of numbers till the number given by user
+3. Use higher order function to filter the odd numbers
+4. Generate and array of the cubes of the filtered numbers -->
+
+
+<html>
+    <head>
+        <script>
+                 alert("Plese use space after inputted thenumber ")
+                let arr= prompt("Enter the number");
+                 arr1=arr.toString().split('');
+               
+                
+                let odd = arr1.filter(el=>el%2==1);
+                console.log(odd);
+                let oddsqr = odd**2
+                
+                
+                let oddcb = oddsqr*odd;
+                console.log(oddcb);
+
+            
+            
+
+
+        </script>
+    </head>
+    <body>
+        <form>
+            
+        </form>
+    </body>
+</html>
